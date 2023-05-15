@@ -9,7 +9,6 @@ const AppDataSource = new DataSource({
   password: process.env.MDB_PASSWORD,
   database: process.env.MDB_DB,
   logging: true,
-  synchronize: false,
 });
 
 export default AppDataSource;

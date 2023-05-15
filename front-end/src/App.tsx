@@ -9,8 +9,19 @@ function App() {
     setFile(event.target.files[0]);
   };
 
-  const validatedFile = () => {
+  const validatedFile = async () => {
     console.log(file)
+    try {
+      await fetch('http://localhost:3000/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(file),
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

@@ -4,12 +4,12 @@ import "dotenv/config";
 
 (async () => {
 
-    await AppDataSource.initialize()
+  await AppDataSource.initialize()
     .catch((err) => {
-        console.error("Error during Data Source initialization", err)
+      console.error("Error during Data Source initialization", err)
     })
-    const PORT = process.env.PORT
-    app.listen(PORT, () => {
-        console.log("Servidor executando")
-    })    
+  const PORT = process.env.PORT
+  app.listen(PORT, () => {
+    console.log(`Servidor executando na porta ${PORT}`)
+  })
 })()
